@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GM Group Inc. Route Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#005A9C',
+              'brand-secondary': '#003B65',
+              'brand-accent': '#FDB813',
+              'status-active': '#10B981',
+              'status-inactive': '#6B7280',
+              'status-flagged': '#EF4444',
+              gray: {
+                50: '#F7F8FA',  // Light Mode BG
+                100: '#F3F4F6', // Light Mode Elements
+                200: '#E1E4E8', // Light Mode Border
+                300: '#D1D5DB',
+                400: '#B7BBC2', // Dark Mode Secondary Text
+                500: '#6B7280',
+                600: '#4A4E54', // Light Mode Secondary Text
+                700: '#2C2F33', // Dark Mode Card Outline / Borders
+                800: '#1A1C1F', // Dark Mode Card BG
+                900: '#0E0F11', // Dark Mode Main BG (Industrial Charcoal)
+              }
+            },
+          },
+        },
+      }
+    </script>
+    <script>
+      // Prevents a flash of the wrong theme
+      (function() {
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

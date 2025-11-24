@@ -1,0 +1,7 @@
+{
+  "name": "GMG",
+  "description": "An application for health and safety consultants to manage and report on their weekly site visits, streamlining the distribution list process for management.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
